@@ -1,10 +1,12 @@
+import type { ReactNode } from 'react';
+
 type IconName = 'arrow-left' | 'arrow-right' | 'menu' | 'fullscreen' | 'close' | 'clock' | 'coins' | 'box' | 'check' | 'plus';
 
 type Props = { name: IconName; size?: number; strokeWidth?: number };
 
 export function Icon({ name, size = 24, strokeWidth = 1.8 }: Props) {
   const common = { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true };
-  const paths: Record<IconName, JSX.Element> = {
+  const paths: Record<IconName, ReactNode> = {
     'arrow-left': <path d="m15 18-6-6 6-6" />,
     'arrow-right': <path d="m9 18 6-6-6-6" />,
     menu: <><path d="M4 6h16M4 12h16M4 18h16" /></>,
